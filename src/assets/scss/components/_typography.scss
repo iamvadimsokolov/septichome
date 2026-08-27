@@ -1,0 +1,106 @@
+@use "../mixins/breakpoint" as *;
+
+// 128, regular
+@mixin text-9xl {
+  margin: 0;
+  font-size: 128px;
+  line-height: 144px;
+  letter-spacing: -1%;
+}
+
+// 96, regular
+@mixin text-8xl {
+  margin: 0;
+  font-size: 96px;
+  line-height: 108px;
+  letter-spacing: -1%;
+}
+
+// 72, regular
+@mixin text-7xl {
+  margin: 0;
+  font-size: 72px;
+  line-height: 80px;
+  letter-spacing: -1%;
+}
+
+// 56, regular
+@mixin text-6xl {
+  margin: 0;
+  font-size: 60px;
+  line-height: 68px;
+  letter-spacing: -1%;
+}
+
+// 48, regular
+@mixin text-5xl {
+  margin: 0;
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -1%;
+}
+
+// 36, regular
+@mixin text-4xl {
+  margin: 0;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -1%;
+}
+
+// 30, regular
+@mixin text-3xl {
+  margin: 0;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -1%;
+}
+
+// 24, regular
+@mixin text-2xl {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -1%;
+}
+
+// 20, regular
+@mixin text-xl {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -3%;
+}
+
+// 18, regular
+@mixin text-lg {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -3%;
+}
+
+// 16, regular
+@mixin text-base {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -3%;
+}
+
+// 14, regular
+@mixin text-sm {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -3%;
+
+}
+
+// 12, regular
+@mixin text-xs {
+  margin: 0;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -3%;
+}

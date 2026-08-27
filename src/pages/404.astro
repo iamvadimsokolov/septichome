@@ -1,0 +1,25 @@
+---
+import Layout from "@/layouts/BaseLayout.astro";
+---
+
+<Layout title="404">
+  <div class="error">
+    <div class="container">
+      <p>404</p>
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    p {
+      font-size: 72px;
+      font-weight: 700;
+    }
+  }
+</style>

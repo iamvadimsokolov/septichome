@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/BaseLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/partials/FormattedDate.astro";
+
+// Получение всех постов
+const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+// Сортировка по дате
+const posts = allPosts
+  .filter((post) => post.data.pubDate)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title="Блог">
+  <div class="container">
+    <h1>blog page</h1>
+    <p>Посты с сортировкой по дате:</p>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}`}>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <FormattedDate date={post.data.pubDate} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
