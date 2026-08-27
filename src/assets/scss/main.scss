@@ -1,0 +1,16 @@
+/* stylelint-disable at-rule-empty-line-before */
+// базовые подключения
+@use "vars" as *;
+@use "fonts" as *;
+@use "settings" as *;
+
+// если нужны библиотеки
+// @use "../../../node_modules/graph-modal/dist/graph-modal.min.css" as *;
+// @use "../../../node_modules/simplebar/dist/simplebar.min.css" as *;
+// @use "../../../node_modules/nouislider/dist/nouislider.min.css" as *;
+// @use "../../../node_modules/swiper/swiper-bundle.min.css" as *;
+
+// подключения компонентов страницы
+
+// ui
+@use "./components/header" as *;

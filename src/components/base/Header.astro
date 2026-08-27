@@ -1,0 +1,32 @@
+---
+import Container from "@/components/base/Container.astro";
+---
+
+<header class="header">
+  <Container>
+    <div class="header__content">
+      <a href="/">header logo</a>
+      <ul class="list-reset">
+        <li><a href="/">home</a></li>
+        <li><a href="/blog">blog</a></li>
+      </ul>
+    </div>
+  </Container>
+</header>
+
+<style lang="scss">
+  .header {
+    padding: 32px 0;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    ul {
+      display: flex;
+      gap: 12px;
+    }
+  }
+</style>

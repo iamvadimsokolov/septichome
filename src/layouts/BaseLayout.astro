@@ -1,0 +1,38 @@
+---
+import Head from "@/components/base/Head.astro";
+import Header from "@/components/base/Header.astro";
+import Footer from "@/components/base/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/utils/consts";
+
+// export interface Props {
+//   title?: string;
+//   description?: string;
+//   date?: Date | string;
+//   [key: string]: any;
+// }
+
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  date,
+  ...rest
+} = Astro.props;
+
+const dateString = date instanceof Date ? date.toISOString() : date;
+---
+
+<!doctype html>
+<html lang="ru" class="page">
+  <head>
+    <Head title={title} description={description} date={dateString} {...rest} />
+  </head>
+  <body class="page__body">
+    <div class="site-container">
+      <Header />
+      <main class="main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

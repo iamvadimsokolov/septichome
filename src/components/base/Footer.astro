@@ -1,0 +1,16 @@
+---
+const currentYear = new Date().getFullYear();
+import Container from "@/components/base/Container.astro";
+---
+
+<footer class="footer">
+  <Container>
+    © {currentYear} Astro Builer
+  </Container>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding: 32px 0;
+  }
+</style>

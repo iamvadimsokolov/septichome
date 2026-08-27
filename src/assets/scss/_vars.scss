@@ -1,0 +1,54 @@
+// если вы хотите использовать sass-переменные - удалите root
+@use "./mixins/breakpoint.scss" as *;
+
+
+:root {
+  // base
+  --font-family: "Inter", sans-serif;
+
+  // --second-family: "Russo One", sans-serif;
+  // --third-family: "Consolas", sans-serif;
+  --content-width: 920px;
+  --container-offset: 24px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --black-color: #000;
+  --white-color: #fff;
+
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+
+  --orange-500: #f84416;
+
+  --stone-100: #f5f5f4;
+
+  --green-50: #f2faeb;
+	--green-500: #67aa38;
+
+  --blue-50: #eff6ff;
+  --blue-500: #3b82f6;
+
+  --red-50: #fef2f2;
+  --red-500: #ef4444;
+
+  --violet-50: #f5f3ff;
+  --violet-500: #8b5cf6;
+
+  --teal-50: #f0fdfa;
+	--teal-500: #14b8a6;
+
+  --yellow-50: #fefce8;
+	--yellow-500: #eab308;
+
+  --pink-50: #fdf2f8;
+	--pink-500: #ec4899;
+}
