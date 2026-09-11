@@ -1,0 +1,46 @@
+---
+import Bange from "@/components/base/Bange.astro";
+import Button from "@/components/base/Button.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import imageDealer from "@/assets/img/logo-eurolos.jpg";
+---
+
+<section class="benefits section-offset">
+  <div class="container">
+    <Bange>Наши преимущества</Bange>
+    <div class="benefits__main">
+      <h2 class="benefits__title title">Почему клиенты нам доверяют</h2>
+      <Button class="benefits__link" href="/about" variant="primary" asLink>
+        <span>О компании</span>
+        <Icon name="arrow-right" />
+      </Button>
+    </div>
+    <p class="benefits__descr main-descr">
+      Мы устанавливаем надежные септики с высокой степенью очистки сточных вод и
+      длительным сроком службы
+    </p>
+    <div class="benefits__signature">
+      <p class="benefits__signature-text">Мы официальный дилер компании</p>
+      <Image src={imageDealer} width={130} height={46} alt="Логотип компании Евролос" />
+    </div>
+    <ul class="benefits__list benefits-list grid list-reset">
+      <li class="benefits-list__item">
+        <Icon name="star" width={24} height={24} class="benefits-list__icon"/>
+        <h3 class="benefits-list__title">Официальный дилер Eurolos</h3>
+        <p class="benefits-list__descr">Мы - сертифицированный дилер, поэтому вы получаете оригинальное оборудование по лучшим ценам</p>
+      </li>
+       <li class="benefits-list__item">
+        <Icon name="star" width={24} height={24} class="benefits-list__icon"/>
+        <h3 class="benefits-list__title">Фиксированная цена в договоре</h3>
+        <p class="benefits-list__descr">Честные цены без посреднических и прочих наценок, экономия до 30% - вы платите только за оборудование и монтаж</p>
+      </li>
+       <li class="benefits-list__item">
+        <Icon name="star" width={24} height={24} class="benefits-list__icon"/>
+        <h3 class="benefits-list__title">Монтаж септика под ключ</h3>
+        <p class="benefits-list__descr">Учтем особенности участка и подберём идеальную модель септика. Рассчитаем объём септика под количество проживающих</p>
+      </li>
+    </ul>
+  </div>
+</section>

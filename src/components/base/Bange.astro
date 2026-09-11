@@ -1,0 +1,10 @@
+---
+const { variant = "green", class: className = "", ...restProps } = Astro.props;
+const classes = `bange bange--${variant} ${className}`;
+---
+
+<div class={classes} {...restProps}>
+  <span>
+    <slot />
+  </span>
+</div>

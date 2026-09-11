@@ -1,0 +1,30 @@
+---
+const {
+  variant = "primary",
+  size = "md",
+  href,
+  type = "button",
+  class: className = "",
+  asLink = false,
+  ...restProps
+} = Astro.props;
+
+const classesBtn = `btn btn-reset btn--${variant} btn--${size} ${className}`;
+const classesLink = `link link--${variant} ${className}`;
+---
+
+{
+  href && asLink ? (
+    <a href={href} class={classesLink} {...restProps}>
+      <slot />
+    </a>
+  ) : href ? (
+    <a href={href} class={classesBtn} type={type} {...restProps}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classesBtn} type={type} {...restProps}>
+      <slot />
+    </button>
+  )
+}

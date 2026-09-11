@@ -8,9 +8,11 @@
 
   // --second-family: "Russo One", sans-serif;
   // --third-family: "Consolas", sans-serif;
-  --content-width: 920px;
+  --content-width: 1280px;
   --container-offset: 24px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-width-md: calc(var(--content-width) + 80px + (var(--container-offset) * 2));
+  --container-width-xl: calc(var(--content-width) + 200px + (var(--container-offset) * 2));
 
   // colors
   --black-color: #000;

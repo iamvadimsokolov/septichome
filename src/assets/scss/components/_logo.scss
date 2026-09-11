@@ -1,0 +1,36 @@
+@use "./typography.scss" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__title {
+    @include text-base;
+
+    font-weight: 600;
+    text-decoration: none;
+        color: var(--neutral-900);
+  }
+
+  &__descr {
+    @include text-xs;
+
+    position: relative;
+    margin-left: 25px;
+    max-width: 196px;
+        color: var(--neutral-900);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      display: block;
+      width: 1px;
+      height: 36px;
+      background-color: var(--neutral-200);
+      translate: 0 -50%;
+      // transform: translateY(-50%);
+    }
+  }
+}

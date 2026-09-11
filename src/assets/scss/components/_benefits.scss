@@ -1,0 +1,66 @@
+@use "./typography" as *;
+
+.benefits {
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__title {}
+
+  &__link {
+    flex-shrink: 0;
+  }
+
+  &__descr {
+    margin-bottom: 32px;
+    max-width: 506px;
+  }
+
+  &__signature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 44px;
+    gap: 4px;
+
+    &-text {
+      @include text-sm;
+
+      font-weight: 400;
+      color: var(--neutral-900);
+    }
+  }
+
+  &__list {}
+}
+
+.benefits-list {
+  &__item {
+    grid-column: 4 span;
+    border: 1px solid var(--neutral-200);
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    @include text-base;
+
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--neutral-900);
+  }
+
+  &__descr {
+    @include text-sm;
+
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+}

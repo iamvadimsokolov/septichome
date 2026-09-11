@@ -1,0 +1,112 @@
+@use "./typography" as *;
+
+.gallery {
+
+  &__bange {}
+
+  &__title {}
+
+  &__descr {
+    margin-bottom: 44px;
+  }
+
+  &__bg {}
+
+  &__advantages {}
+}
+
+.gallery-content {
+  margin-bottom: 24px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    grid-column: 2 span;
+    overflow: hidden;
+    border-radius: 16px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          var(--neutral-900),
+          transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      pointer-events: none;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:hover .gallery-content__img {
+      transform: scale(1.1);
+    }
+
+    &:hover .gallery-content__caption {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__img {
+    position: relative;
+    transition: transform .3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--neutral-600);
+    }
+  }
+
+  &__caption {
+    @include text-sm;
+
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1;
+    font-weight: 400;
+    color: var(--white-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: default;
+  }
+}
+
+.gallery-advantages {
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    grid-column: 4 span;
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 3px;
+    margin-right: 12px;
+    fill: var(--orange-500);
+  }
+
+  &__descr {
+    @include text-sm;
+
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+}

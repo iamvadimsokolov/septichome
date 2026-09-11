@@ -1,0 +1,28 @@
+.feedback {
+
+  &__bange {}
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__title {
+    max-width: 717px;
+  }
+
+  &__action {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__btn {}
+
+  &__descr {
+      max-width: 523px;
+  }
+}

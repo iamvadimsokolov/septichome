@@ -1,0 +1,46 @@
+ @use "./typography.scss" as *;
+
+ .bange {
+   @include text-sm;
+
+   display: inline-block;
+   margin-bottom: 24px;
+   border-radius: 8px;
+   padding: 2px 6px;
+   font-weight: 500;
+
+   &--green {
+     color: var(--green-500);
+     background-color: var(--green-50);
+   }
+
+   &--blue {
+     color: var(--blue-500);
+     background-color: var(--blue-50);
+   }
+
+   &--violet {
+     color: var(--violet-500);
+     background-color: var(--violet-50);
+   }
+
+   &--red {
+     color: var(--red-500);
+     background-color: var(--red-50);
+   }
+
+   &--teal {
+     color: var(--teal-500);
+     background-color: var(--teal-50);
+   }
+
+   &--yellow {
+     color: var(--yellow-500);
+     background-color: var(--yellow-50);
+   }
+
+   &--pink {
+     color: var(--pink-500);
+     background-color: var(--pink-50);
+   }
+ }

@@ -2,11 +2,17 @@
 /* stylelint-disable declaration-no-important */
 @use "./mixins/breakpoint.scss" as *;
 @use "./mixins/utils" as *;
+@use "./components/typography" as *;
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+::selection {
+  color: #008cff;
+  background: #d8ecfc;
 }
 
 .page {
@@ -37,8 +43,22 @@
   display: none;
 }
 
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
 .is-hidden {
   display: none !important;
+}
+
+svg {
+  fill: currentcolor;
 }
 
 .btn-reset {
@@ -80,10 +100,46 @@
   clip: rect(0 0 0 0);
 }
 
+.section-offset {
+  margin-bottom: 128px;
+}
+
+.main-title {
+  @include text-7xl;
+
+  margin-bottom: 16px;
+  color: var(--neutral-900);
+}
+
+.main-descr {
+  @include text-lg;
+
+    color: var(--neutral-600);
+}
+
+.title {
+  @include text-6xl;
+
+  margin-bottom: 16px;
+  color: var(--neutral-900);
+}
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+}
+
+.container-md {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width-md);
+}
+
+.container-xl {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width-xl);
 }
 
 .content-wrapper {
@@ -104,6 +160,7 @@
   height: 100vh;
   overscroll-behavior: none;
 }
+
 
 .grid {
   display: grid;
