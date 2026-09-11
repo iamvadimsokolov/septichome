@@ -1,0 +1,46 @@
+---
+import Bange from "@/components/base/Bange.astro";
+import Button from "@/components/base/Button.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="steps section-offset">
+  <div class="container">
+    <Bange>Процесс работы</Bange>
+    <h2 class="steps__title title">Всего 4 шага для надежной канализации</h2>
+    <p class="steps__descr main-descr">
+      Мы специализируемся на подборе, продаже и установке септиков для частных
+      домов, дач и коммерческих объектов
+    </p>
+    <ul class="steps__list steps-list grid list-reset">
+      <li class="steps-list__item">
+        <h3 class="steps-list__title">Заявка и консультация</h3>
+        <p class="steps-list__descr">
+          Оставьте заявку — и мы свяжемся с вами в течение 15 минут для
+          бесплатной консультации
+        </p>
+      </li>
+      <li class="steps-list__item">
+        <h3 class="steps-list__title">Выезд инженера</h3>
+        <p class="steps-list__descr">
+          Главный инженер выезжает к вам на участок, составляет проект монтажа и точную смету
+        </p>
+      </li>
+      <li class="steps-list__item">
+        <h3 class="steps-list__title">Заключение договора</h3>
+        <p class="steps-list__descr">
+         Подписываем договор с окончательной стоимостью. Цена в договоре без доплат и сюрпризов
+        </p>
+      </li>
+      <li class="steps-list__item">
+        <h3 class="steps-list__title">Монтаж станции</h3>
+        <p class="steps-list__descr">
+          Приедем точно в срок, установим за 8 часов. Выдаём расширенную гарантию на станцию
+        </p>
+      </li>
+    </ul>
+    <div class="steps__action">
+      <Button class="steps__btn">Заказать выезд инженера</Button>
+    </div>
+  </div>
+</section>

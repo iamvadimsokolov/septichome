@@ -1,0 +1,70 @@
+@use "./typography.scss" as *;
+
+.steps {
+  &__title {
+    max-width: 710px;
+  }
+
+  &__descr {
+    margin-bottom: 44px;
+    max-width: 563px;
+  }
+
+  &__list {}
+
+  &__action {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {}
+}
+
+.steps-list {
+  counter-reset: steps-counter;
+  margin-bottom: 32px;
+
+  &__item {
+    counter-increment: steps-counter;
+    position: relative;
+    grid-column: 3 span;
+    border: 1px solid var(--neutral-200);
+    border-radius: 16px;
+    padding: 24px 16px 16px;
+    background-color: var(--white-color);
+
+    &::before {
+      @include text-base;
+
+      content: counter(steps-counter);
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--neutral-200);
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      font-weight: 700;
+      color: var(--orange-500);
+      background-color: var(--white-color);
+    }
+  }
+
+  &__title {
+    @include text-base;
+
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--neutral-900);
+  }
+
+  &__descr {
+    @include text-sm;
+
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+}

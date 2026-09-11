@@ -1,0 +1,19 @@
+.header-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.connect {
+  &__btn {
+    .icon {
+      transition: transform .4s ease-in-out;
+    }
+
+    &--active {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

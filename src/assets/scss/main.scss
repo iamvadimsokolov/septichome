@@ -8,9 +8,24 @@
 // @use "../../../node_modules/graph-modal/dist/graph-modal.min.css" as *;
 // @use "../../../node_modules/simplebar/dist/simplebar.min.css" as *;
 // @use "../../../node_modules/nouislider/dist/nouislider.min.css" as *;
-// @use "../../../node_modules/swiper/swiper-bundle.min.css" as *;
+@use "../../../node_modules/swiper/swiper-bundle.min.css" as *;
 
 // подключения компонентов страницы
 
 // ui
 @use "./components/header" as *;
+@use "./components/button" as *;
+@use "./components/logo" as *;
+@use "./components/nav" as *;
+@use "./components/header-action" as *;
+@use "./components/dropdown-connect" as *;
+@use "./components/bange" as *;
+@use "./components/main-hero" as *;
+@use "./components/advantages-list" as *;
+@use "./components/benefits" as *;
+@use "./components/steps" as *;
+@use "./components/swiper" as *;
+@use "./components/chars" as *;
+@use "./components/models" as *;
+@use "./components/gallery" as *;
+@use "./components/feedback" as *;

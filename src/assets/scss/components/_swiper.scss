@@ -1,0 +1,10 @@
+.models-slider .swiper {
+  overflow: initial;
+  box-sizing: border-box;
+}
+
+
+.models-slider__btns .swiper-button-disabled {
+  opacity: 0.6;
+  cursor: inherit;
+}

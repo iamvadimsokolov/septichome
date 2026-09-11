@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config"
 import relativeLinks from "astro-relative-links";
 import icon from "astro-icon";
 import mdx from '@astrojs/mdx';
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 const isBackend = process.env.BUILD_ENV === "backend";
@@ -25,15 +24,15 @@ export default defineConfig({
     relativeLinks(),
     icon({
       iconDir: "src/assets/icons",
-      svgoOptions: {
-        plugins: [
-          {
-            name: "removeAttrs",
-            params: { attrs: "(fill|stroke)" },
-          },
-          { name: "removeDimensions" },
-        ],
-      },
+       svgoOptions: {
+         plugins: [
+      //     {
+      //       name: "removeAttrs",
+      //       params: { attrs: "(fill|stroke)" },
+      //     },
+           { name: "removeDimensions" },
+         ],
+       },
     }),
   ],
   vite: {

@@ -1,0 +1,63 @@
+---
+import Bange from "@/components/base/Bange.astro";
+import Button from "@/components/base/Button.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Advantages from "@/components/base/ListAdvantages.astro";
+
+import imageBg1 from "@/assets/img/hero-1.jpg";
+import imageBg2 from "@/assets/img/hero-2.jpg";
+import imageBg3 from "@/assets/img/hero-3.jpg";
+---
+
+<section class="hero section-offset">
+  <div class="container-md">
+    <div class="hero__inner">
+      <Bange>Официальный дилер Евролос</Bange>
+      <h1 class="hero__title main-title">
+        Монтаж автономной канализации без откачки
+      </h1>
+      <p class="hero__descr main-descr">
+        Мы специализируемся на подборе и установке септиков для частных домов,
+        дач и коммерческих объектов
+      </p>
+      <div class="hero__action">
+        <Button href="/catalog" variant="primary" size="md">
+          <span>В каталог</span>
+          <Icon name="arrow-right" />
+        </Button>
+        <Button variant="secondary" size="md">Заказать звонок</Button>
+      </div>
+      <ul class="hero__bg hero-bg grid list-reset" role="list">
+        <li class="hero__bg-item" role="listitem">
+          <Image
+            src={imageBg1}
+            alt=""
+            loading="eager"
+            width={400}
+            height={490}
+          />
+        </li>
+        <li class="hero__bg-item" role="listitem">
+          <Image
+            src={imageBg2}
+            alt=""
+            loading="eager"
+            width={400}
+            height={490}
+          />
+        </li>
+        <li class="hero__bg-item" role="listitem">
+          <Image
+            src={imageBg3}
+            alt=""
+            loading="eager"
+            width={400}
+            height={490}
+          />
+        </li>
+      </ul>
+        <Advantages class="hero__advantages" />
+    </div>
+  </div>
+</section>

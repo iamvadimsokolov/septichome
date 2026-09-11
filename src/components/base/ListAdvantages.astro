@@ -1,0 +1,23 @@
+---
+const { class: className = "", ...restProps } = Astro.props;
+const classes = `advantages list-reset grid ${className}`;
+---
+
+<ul class={classes}>
+  <li class="advantages__item">
+    <span class="advantages__value">215</span>
+    <span class="advantages__descr">проектов</span>
+  </li>
+  <li class="advantages__item">
+    <span class="advantages__value">50</span>
+    <span class="advantages__descr">лет службы</span>
+  </li>
+  <li class="advantages__item">
+    <span class="advantages__value">24/7</span>
+    <span class="advantages__descr">доступны для вас</span>
+  </li>
+  <li class="advantages__item">
+    <span class="advantages__value">20+</span>
+    <span class="advantages__descr">опыта в сфере</span>
+  </li>
+</ul>

@@ -1,0 +1,45 @@
+---
+import Button from "@/components/base/Button.astro";
+const { class: className = "" } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<div class={`header-action ${className}`}>
+  <div class="header-action__connect connect" data-connect>
+    <Button
+      variant="secondary"
+      size="sm"
+      class="connect__btn"
+      aria-expanded="false"
+      data-connect-btn
+    >
+      <span>Связаться с нами</span>
+      <Icon name="chevron-down" class="icon" size="20" />
+    </Button>
+
+    <ul class="connect__dropdown list-reset" data-connect-dropdown>
+      <li class="connect__item">
+        <a class="connect__link" href="tel:+79267267206">
+          <Icon name="phone" class="icon" size="20" />
+          <div class="connect__data">
+            <span class="connect__value">+7 (926) 726-72-06</span>
+            <span class="connect__descr">Позвонить нам</span>
+          </div>
+        </a>
+      </li>
+      <li class="connect__item">
+        <a class="connect__link" href="mailto:hi@septichome.ru">
+          <Icon name="mail" class="icon" size="20" />
+          <div class="connect__data">
+            <span class="connect__value">hi@septichome.ru</span>
+            <span class="connect__descr">Написать нам</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <Button variant="primary" size="sm" class="header-action__btn">
+    <span>Заказать монтаж</span>
+  </Button>
+</div>

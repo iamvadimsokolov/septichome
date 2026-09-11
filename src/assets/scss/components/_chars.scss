@@ -1,0 +1,36 @@
+@use "./typography" as *;
+
+.chars {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 8px;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__term {
+    @include text-xs;
+
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+
+  &__val {
+    @include text-xs;
+
+    font-weight: 400;
+    color: var(--neutral-900);
+  }
+
+  &__term::after {
+    content: "..............................................................................................";
+    position: absolute;
+    color: var(--neutral-500);
+  }
+}

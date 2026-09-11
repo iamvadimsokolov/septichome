@@ -1,0 +1,19 @@
+---
+const { class: className = '' } = Astro.props;
+const isHome = Astro.url.pathname === "/";
+---
+
+<div class=`logo ${className}`>
+  {
+    isHome ? (
+      <span class="logo__title">СептикХоум</span>
+    ) : (
+      <a class="logo__title" href="/">
+        СептикХоум
+      </a>
+    )
+  }
+  <span class="logo__descr"
+    >Монтаж автономной канализации в Москве и Московской области</span
+  >
+</div>

@@ -1,0 +1,42 @@
+.hero {
+  padding-top: 96px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 992px;
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 32px;
+    max-width: 559px;
+    text-align: center;
+  }
+
+  &__action {
+    display: flex;
+    margin-bottom: 44px;
+    gap: 16px;
+  }
+
+  &__bg {
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+  &__bg-item {
+    grid-column: 4 span;
+    overflow: hidden;
+    border-radius: 16px;
+
+    img {
+      display: flex;
+      width: 100%;
+    }
+  }
+}

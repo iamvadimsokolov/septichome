@@ -1,0 +1,71 @@
+@use './typography' as *;
+
+.connect {
+  position: relative;
+
+  &__dropdown {
+    position: absolute;
+    left: 50%;
+    top: 42px;
+    border: 1px solid var(--neutral-200);
+    border-radius: 16px;
+    padding: 8px;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
+    background-color: var(--white-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .2s ease-in-out;
+    translate: -50% 0;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 8px;
+    text-decoration: none;
+    color: var(--neutral-900);
+    gap: 16px;
+
+    .icon {
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    &:hover {
+      background-color: var(--neutral-100);
+    }
+  }
+
+  &__value {
+    @include text-base;
+
+    font-weight: 500;
+
+  }
+
+  &__descr {
+    @include text-sm;
+
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+}

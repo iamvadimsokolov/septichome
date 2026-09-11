@@ -1,0 +1,85 @@
+---
+import Bange from "@/components/base/Bange.astro";
+import { galleryImg } from "@/data/data";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const images = import.meta.glob("@/assets/img/gallery/*.jpg", { eager: true });
+
+const getImage = (path: string) => {
+  return images[path]?.default;
+};
+---
+
+<section class="gallery section-offset">
+  <div class="container">
+    <Bange class="gallery__bange">Галерея</Bange>
+    <h2 class="gallery__title title">Фото наших последних проектов</h2>
+    <p class="gallery__descr main-descr">
+      Фото наших работ по установке септиков в московской области
+    </p>
+  </div>
+
+  <div class="gallery__bg gallery-content">
+    <div class="container-xl">
+      <ul class="gallery-content__list list-reset">
+        {
+          galleryImg.map((imgBg) => {
+            const img = getImage(imgBg.image);
+            return (
+              <li class="gallery-content__item">
+                <Image src={img} alt="" width={282} height={400} class="gallery-content__img" />
+                <span class="gallery-content__caption">
+                  {imgBg.label}
+                </span>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <ul class="gallery__advantages gallery-advantages grid list-reset">
+      <li class="gallery-advantages__item">
+        <Icon
+          name="circle-check"
+          width={24}
+          height={24}
+          class="gallery-advantages__icon"
+          color="var(--orange-500)"
+        />
+        <p class="advantages__descr">
+          Монтаж в любую погоду, даже зимой. Гарантируем надёжное исполнение
+        </p>
+      </li>
+      <li class="gallery-advantages__item">
+        <Icon
+          name="circle-check"
+          width={24}
+          height={24}
+          class="gallery-advantages__icon"
+          color="var(--orange-500)"
+        />
+        <p class="advantages__descr">
+          Приедем точно в срок и уложимся в один день. Не нарушим ваш привычный
+          распорядок
+        </p>
+      </li>
+      <li class="gallery-advantages__item">
+        <Icon
+          name="circle-check"
+          width={24}
+          height={24}
+          class="gallery-advantages__icon"
+          color="var(--orange-500)"
+        />
+        <p class="gallery-advantages__descr">
+          Прямые поставки от заводов без посредников. Экономия до 25% от
+          рыночной цены
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>

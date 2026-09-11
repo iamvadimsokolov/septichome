@@ -1,0 +1,32 @@
+---
+// @ts-nocheck
+const currentPath = Astro.url.pathname;
+import Button from "@/components/base/Button.astro";
+
+const { class: className = "", menu = [], id } = Astro.props;
+---
+
+<nav class={`nav ${className}`} aria-label="Главная навигация" data-menu id={id}>
+  <ul class="nav__list list-reset">
+    {
+      menu.map((item) => {
+        const isActive =
+          currentPath === item.href ||
+          (item.href !== "/" && currentPath.startsWith(item.href));
+        return (
+          <li class="nav__item">
+            <Button
+              href={item.href}
+              variant={isActive ? "primary" : "secondary"}
+              class={`nav__link ${isActive ? "nav__link--active" : ""}`}
+              aria-current={isActive ? "page" : undefined}
+              asLink
+            >
+              {item.label}
+            </Button>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

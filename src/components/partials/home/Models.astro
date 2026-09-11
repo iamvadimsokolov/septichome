@@ -1,0 +1,101 @@
+---
+import Bange from "@/components/base/Bange.astro";
+import Button from "@/components/base/Button.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import { modelsSlider } from "@/data/data";
+
+const images = import.meta.glob("@/assets/img/models/*.png", { eager: true });
+
+const getImage = (path: string) => {
+  return images[path]?.default;
+};
+---
+
+<section class="models section-offset">
+  <div class="container">
+    <div class="models__inner">
+      <Bange class="models__bange">Линейка моделей Евролос</Bange>
+      <h2 class="models__title title">
+        Подберем септик под ваши индивидуальные потребности
+      </h2>
+      <p class="models__descr main-descr">
+        Подберем септик для любого участка: от дачных до коттеджных решений с
+        учётом всех особенностей вашей местности
+      </p>
+    </div>
+
+    <div class="models__slider models-slider">
+      <div class="swiper" data-models-slider id="models-slider">
+        <div class="swiper-wrapper">
+          {
+            modelsSlider.map((model) => {
+              const img = getImage(model.image);
+              return (
+                <div class="swiper-slide">
+                  <div class="models-slider__slide">
+                    {img && (
+                      <a
+                        href={model.href}
+                        class="models-slider__link"
+                        aria-label={`Перейти к ${model.title}`}
+                      >
+                        <div class="models-slider__bg">
+                          <Image src={img} alt="" width={376} height={376} class="models-slider__img" />
+                        </div>
+                        <div class="models-slider__content">
+                          <h3 class="models-slider__title">{model.title}</h3>
+                          <p class="models-slider__descr">{model.descr}</p>
+
+                          <dl class="models-slider__chars chars">
+                            {model.chars.map((char) => (
+                              <div class="chars__item">
+                                <dt class="chars__term">{char.label}</dt>
+                                <dd class="chars__val">{char.value}</dd>
+                              </div>
+                            ))}
+                          </dl>
+
+                          <div class="models-slider__action">
+                            <p class="models-slider__price">
+                              от {model.price}
+                              <span class="models-slider__symbol">₽</span>
+                            </p>
+                            <span class="models-slider__buy btn btn--primary btn--sm">
+                              Подробнее
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <div class="models-slider__btns">
+        <Button
+          variant="secondary"
+          aria-label="Листать назад"
+          aria-controls="models-slider"
+          class="models-slider__btn models-slider__btn--prev"
+
+        >
+          <Icon name="arrow-left" width="24" height={24} />
+        </Button>
+        <Button
+          variant="secondary"
+          aria-label="Листать вперед"
+          aria-controls="models-slider"
+          class="models-slider__btn models-slider__btn--next"
+
+        >
+          <Icon name="arrow-right" width={24} height={24} />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>

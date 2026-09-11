@@ -1,0 +1,86 @@
+ @use "./typography.scss" as *;
+
+ .btn {
+   --size-md: 44px;
+   --size-sm: 36px;
+
+   @include text-base;
+
+   display: inline-flex;
+   align-items: center;
+   border-radius: 12px;
+   padding: 0 12px;
+   text-decoration: none;
+   cursor: pointer;
+   gap: 4px;
+
+   svg:first-child {
+     margin-left: -4px;
+   }
+
+   svg:last-child {
+     margin-right: -4px;
+   }
+
+   svg:only-child {
+     margin: 0;
+   }
+
+   &--primary {
+     font-weight: 500;
+     color: var(--white-color);
+     background-color: var(--orange-500);
+   }
+
+   &--secondary {
+     border: 1px solid var(--neutral-200);
+     font-weight: 600;
+     color: var(--neutral-900);
+     background-color: var(--white-color);
+   }
+
+   &--ghost {
+     color: var(--neutral-900);
+     background-color: var(--neutral-100);
+   }
+
+   &--black {
+     color: var(--white-color);
+     background-color: var(--neutral-900);
+   }
+
+   &--sm {
+     height: var(--size-sm);
+   }
+
+   &--md {
+     height: var(--size-md);
+   }
+ }
+
+ .link {
+   @include text-base;
+
+   display: inline-flex;
+   align-items: center;
+   text-decoration: none;
+   cursor: pointer;
+
+   svg:first-child {
+     margin-right: 4px;
+   }
+
+   svg:last-child {
+     margin-left: 4px;
+   }
+
+   &--primary {
+     font-weight: 500;
+     color: var(--orange-500);
+   }
+
+   &--secondary {
+     font-weight: 500;
+     color: var(--neutral-900);
+   }
+ }
