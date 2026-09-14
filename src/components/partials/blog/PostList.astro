@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Button from "@/components/base/Button.astro";
+import PostItem from '@/components/partials/blog/PostItem.astro';
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<section class="posts section-offset">
+  <div class="container">
+    <ul class="posts__list post-list list-reset grid">
+      {
+        posts.map((post) => (
+
+         <PostItem post={post} />
+          // <li class="post-list__item">
+          //   <a href={`/blog/${post.id}/`} class="post-list__link">
+          //     {post.data.image && (
+          //       <div class="post-list__bg">
+          //         <Image
+          //           width={411}
+          //           height={205}
+          //           src={post.data.image}
+          //           alt=""
+          //           aria-hidden="true"
+          //           class="post-list__img"
+          //         />
+          //       </div>
+          //     )}
+          //     </a>
+          //     <div class="post-list__data">
+          //       <a href={`/blog/${post.id}/`} class="post-list__link">
+          //         <h2 class="post-list__title">{post.data.title}</h2>
+          //       </a>
+
+          //       <p class="post-list__descr">{post.data.description}</p>
+          //       <div class="post-list__action">
+          //         <Button
+          //           href={`/blog/${post.id}/`}
+          //           variant="secondary"
+          //           size="sm"
+          //           class="post-list__read"
+          //         >
+          //           Читать статью
+          //         </Button>
+          //         <span class="post-list__time">~ 2 мин</span>
+          //       </div>
+          //     </div>
+
+          // </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

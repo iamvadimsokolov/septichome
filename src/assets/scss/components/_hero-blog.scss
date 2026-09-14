@@ -1,0 +1,25 @@
+.hero-blog {
+  margin-bottom: 64px;
+  padding-top: 96px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__bange {
+    text-align: center;
+  }
+
+  &__title {
+    max-width: 1035px;
+    text-align: center;
+  }
+
+  &__descr {
+    max-width: 620px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,53 @@
+@use "_typography.scss" as *;
+
+.headlines {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+
+
+  &__nav {}
+
+  &__title {
+    @include text-sm;
+
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: var(--neutral-600);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    // gap: 12px;
+    // border-left: 1px solid var(--neutral-200);
+  }
+
+  &__item {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 12px;
+  }
+
+  &__link {
+    @include text-sm;
+
+    display: flex;
+    border-left: 1px solid var(--neutral-200);
+    padding: 4px 0;
+    padding-left: 12px;
+    font-weight: 400;
+    color: var(--neutral-600);
+    transition: border-left 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      border-left: 1px solid var(--neutral-900);
+      color: var(--neutral-900);
+    }
+
+    &.active {
+      border-left: 1px solid var(--orange-500);
+      color: var(--orange-500);
+    }
+  }
+}

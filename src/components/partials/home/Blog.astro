@@ -1,0 +1,33 @@
+---
+import Button from "@/components/base/Button.astro";
+import Bange from "@/components/base/Bange.astro";
+import PostItem from "@/components/partials/blog/PostItem.astro";
+import { Icon } from "astro-icon/components";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.pubDate)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<section class="blog section-offset">
+  <div class="container">
+    <Bange class="blog__bange">Блог</Bange>
+    <div class="blog__inner">
+      <h2 class="blog__title title">Ещё больше информации</h2>
+      <Button class="blog__link" href="/blog" asLink>
+        <span>Перейти в блог</span>
+        <Icon name="arrow-right" />
+      </Button>
+    </div>
+    <p class="blog__descr main-descr">
+      Полезные статьи о выборе, установке и обслуживании септиков для загородных
+      домов и дач
+    </p>
+
+  <ul class="blog__posts blog-posts grid list-reset">
+    {posts.map((post) => <PostItem post={post} />)}
+  </ul>
+    </div>
+</section>
