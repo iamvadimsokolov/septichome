@@ -1,0 +1,79 @@
+@use "./typography.scss" as *;
+
+.posts {
+
+  &__list {}
+}
+
+.post-list {
+  row-gap: 44px;
+
+  &__item {
+    grid-column: 4 span;
+  }
+
+  &__article {
+    &:hover {
+      .post-list__title {
+        color: var(--orange-500);
+      }
+
+      .post-list__img {
+        transform: scale(1.1);
+      }
+
+      .post-list__read {
+        border-color: var(--neutral-600);
+      }
+    }
+  }
+
+  &__link {}
+
+  &__bg {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border-radius: 16px;
+  }
+
+  &__img {
+    transition: transform .3s ease-in-out;
+  }
+
+  &__data {}
+
+  &__title {
+    @include text-lg;
+
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--neutral-900);
+    transition: color .2s ease-in-out;
+  }
+
+  &__descr {
+    @include text-sm;
+
+    margin-bottom: 24px;
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__read {
+    transition: border-color .3s ease-in-out;
+  }
+
+  &__time {
+    @include text-sm;
+
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+}

@@ -3,6 +3,7 @@
 .models {
   padding: 64px 0 44px;
   background-color: var(--stone-100);
+  overflow-x: hidden;
 
   &__inner {
     display: flex;

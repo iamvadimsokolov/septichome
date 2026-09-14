@@ -1,0 +1,69 @@
+@use "./typography" as *;
+
+.post {
+  padding-top: 96px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__bange {}
+
+  &__title {
+    max-width: 984px;
+    text-align: center;
+  }
+
+  &__descr {
+    margin-bottom: 44px;
+    max-width: 680px;
+    text-align: center;
+  }
+
+  &__bg {
+    display: flex;
+    margin-bottom: 64px;
+    border-radius: 16px;
+    width: 100%;
+    max-height: 500px;
+  }
+
+  &__content {}
+}
+
+.post-content {
+  align-items: start;
+
+  &__text {
+    grid-column: 8 span;
+
+    h2 {
+      @include text-3xl;
+
+      padding-top: 32px;
+      padding-bottom: 16px;
+      font-weight: 700;
+      color: var(--neutral-900);
+      scroll-margin-top: 96px;
+    }
+
+    p {
+      @include text-base;
+
+      font-weight: 400;
+      color: var(--neutral-600);
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__headlines {
+    grid-column: 4 span;
+  }
+}

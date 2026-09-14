@@ -1,15 +1,20 @@
 ---
-const { class: className = '' } = Astro.props;
+const { class: className = "" } = Astro.props;
 const isHome = Astro.url.pathname === "/";
+import { metadata } from "@/data/data";
+
+const siteTitleRu = metadata.find(
+  (item) => item.label === "site_title_ru",
+)?.href;
 ---
 
 <div class=`logo ${className}`>
   {
     isHome ? (
-      <span class="logo__title">СептикХоум</span>
+      <span class="logo__title">{siteTitleRu}</span>
     ) : (
       <a class="logo__title" href="/">
-        СептикХоум
+        {siteTitleRu}
       </a>
     )
   }

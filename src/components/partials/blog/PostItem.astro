@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Button from "@/components/base/Button.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+
+<li class="post-list__item">
+  <article class="post-list__article">
+    <a href={`/blog/${post.id}/`} class="post-list__link">
+      {
+        post.data.image && (
+          <div class="post-list__bg">
+            <Image
+              width={411}
+              height={205}
+              src={post.data.image}
+              alt=""
+              aria-hidden="true"
+              class="post-list__img"
+            />
+          </div>
+        )
+      }
+      <div class="post-list__data">
+        <h2 class="post-list__title">{post.data.title}</h2>
+        <p class="post-list__descr">{post.data.description}</p>
+        <div class="post-list__action">
+          <span class="post-list__read btn btn--secondary btn--sm">
+            Читать статью
+          </span>
+          <span class="post-list__time">~ 2 мин</span>
+        </div>
+      </div>
+    </a>
+  </article>
+</li>
